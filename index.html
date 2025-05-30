@@ -7,46 +7,64 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 40px;
+      margin: 0;
+      background-color: #ccc;
     }
     .container {
-      border: 2px solid #000;
-      padding: 30px;
-      max-width: 700px;
-      background-color: #fff;
-    }
-    h1 {
-      text-align: right;
-      color: #000;
-    }
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
-    .info {
-      text-align: right;
-      font-size: 14px;
-    }
-    .field {
-      margin: 20px 0;
+      position: relative;
+      width: 768px;
+      height: 1004px;
+      background-image: url('images/recibo.png'); /* Caminho da imagem de fundo */
+      background-size: cover;
+      margin: 40px auto;
     }
     input[type="text"] {
+      position: absolute;
+      background: none;
       border: none;
       border-bottom: 1px solid #000;
-      width: 100%;
       font-size: 16px;
-      background: none;
+      font-family: inherit;
+      color: #000;
     }
-    .footer {
-      margin-top: 40px;
+    #cliente {
+      top: 220px;
+      left: 190px;
+      width: 500px;
+    }
+    #valor {
+      top: 250px;
+      left: 190px;
+      width: 200px;
+    }
+    #referencia1 {
+      top: 290px;
+      left: 190px;
+      width: 500px;
+    }
+    #referencia2 {
+      top: 320px;
+      left: 190px;
+      width: 500px;
+    }
+    #dia {
+      top: 430px;
+      left: 170px;
+      width: 40px;
+    }
+    #mes {
+      top: 430px;
+      left: 230px;
+      width: 100px;
+    }
+    #ano {
+      top: 430px;
+      left: 360px;
+      width: 40px;
     }
     button {
-      margin-top: 30px;
+      display: block;
+      margin: 20px auto;
       padding: 10px 20px;
       font-size: 16px;
       cursor: pointer;
@@ -55,37 +73,13 @@
 </head>
 <body>
   <div id="recibo" class="container">
-    <div class="header">
-      <div class="logo">ALPHA CALHAS</div>
-      <div class="info">
-        Rua Ver. José Bernardino Bueno, 277<br>
-        Jd. Novo I - Mogi Guaçu - SP<br>
-        Fones: (19) 3891-1726 / 99431-7743
-      </div>
-    </div>
-
-    <h1>RECIBO</h1>
-
-    <div class="field">
-      Recebemos do Sr.(a): <input type="text" id="cliente" placeholder="Nome do cliente">
-    </div>
-
-    <div class="field">
-      a quantia supra de R$: <input type="text" id="valor" placeholder="Valor">
-    </div>
-
-    <div class="field">
-      Referente à: <input type="text" id="referencia1" placeholder="Referência">
-      <input type="text" id="referencia2" placeholder="Complemento">
-    </div>
-
-    <div class="field">
-      Por ser verdade firmamos o presente
-    </div>
-
-    <div class="footer">
-      Mogi Guaçu, <input type="text" id="dia" style="width: 50px;"> de <input type="text" id="mes" style="width: 100px;"> de 20<input type="text" id="ano" style="width: 40px;">
-    </div>
+    <input type="text" id="cliente" placeholder="Nome do cliente">
+    <input type="text" id="valor" placeholder="Valor">
+    <input type="text" id="referencia1" placeholder="Referência">
+    <input type="text" id="referencia2" placeholder="Complemento">
+    <input type="text" id="dia" placeholder="dd">
+    <input type="text" id="mes" placeholder="mm">
+    <input type="text" id="ano" placeholder="aa">
   </div>
 
   <button onclick="gerarImagem()">Gerar imagem do recibo</button>
@@ -94,7 +88,7 @@
   <script>
     function gerarImagem() {
       const recibo = document.getElementById("recibo");
-      html2canvas(recibo).then(canvas => {
+      html2canvas(recibo, { scale: 2 }).then(canvas => {
         const link = document.createElement("a");
         link.download = "recibo.png";
         link.href = canvas.toDataURL();
