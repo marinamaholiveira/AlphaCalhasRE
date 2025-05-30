@@ -12,10 +12,12 @@
     }
     .container {
       position: relative;
-      width: 768px;
+      width: 869px;
       height: 1004px;
-      background-image: url('images/recibo.png'); /* Caminho da imagem de fundo */
-      background-size: cover;
+      background-image: url('images/recibo.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
       margin: 40px auto;
     }
     input[type="text"] {
@@ -28,39 +30,39 @@
       color: #000;
     }
     #cliente {
-      top: 220px;
-      left: 190px;
-      width: 500px;
+      top: 205px;
+      left: 345px;
+      width: 350px;
     }
     #valor {
       top: 250px;
-      left: 190px;
+      left: 345px;
       width: 200px;
     }
     #referencia1 {
-      top: 290px;
+      top: 300px;
       left: 190px;
-      width: 500px;
+      width: 550px;
     }
     #referencia2 {
-      top: 320px;
+      top: 335px;
       left: 190px;
-      width: 500px;
+      width: 550px;
     }
     #dia {
-      top: 430px;
-      left: 170px;
-      width: 40px;
+      top: 730px;
+      left: 540px;
+      width: 30px;
     }
     #mes {
-      top: 430px;
-      left: 230px;
-      width: 100px;
+      top: 730px;
+      left: 610px;
+      width: 80px;
     }
     #ano {
-      top: 430px;
-      left: 360px;
-      width: 40px;
+      top: 730px;
+      left: 720px;
+      width: 50px;
     }
     button {
       display: block;
@@ -79,7 +81,7 @@
     <input type="text" id="referencia2" placeholder="Complemento">
     <input type="text" id="dia" placeholder="dd">
     <input type="text" id="mes" placeholder="mm">
-    <input type="text" id="ano" placeholder="aa">
+    <input type="text" id="ano" placeholder="aaaa">
   </div>
 
   <button onclick="gerarImagem()">Gerar imagem do recibo</button>
