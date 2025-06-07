@@ -6,12 +6,12 @@ body {
     .container {
       position: relative;
       width: 869px;
-      height: 1004px;
+      height: 700px;
       background-image: url('images/recibo1.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-      margin: 40px auto;
+      margin: 35px auto;
     }
 
     input[type="text"] {
@@ -27,50 +27,50 @@ body {
     }
 
     #cliente {
-      top: 435px;
+      top: 288px;
       left: 200px;
       width: 400px;
     }
     #valor {
       margin-bottom: 20px;
-      top: 410px;
+      top: 258px;
       left: 632px;
       width: 120px;
     }
     #referencia1 {
       margin-bottom: 20px;
-      top: 540px;
+      top: 389px;
       left: 138px;
       width: 580px;
     }
     #referencia2 {
       margin-bottom: 20px;
-      top: 473px;
+      top: 320px;
       left: 210px;
       width: 580px;
     }
     #dia {
       margin-bottom: 20px;
-      top: 620px;
+      top: 467px;
       left: 557px;
       width: 20px;
     }
     #mes {
       margin-bottom: 20px;
-      top: 620px;
+      top: 467px;
       left: 610px;
       width: 80px;
     }
     #ano {
       margin-bottom: 20px;
-      top: 620px;
+      top: 467px;
       left: 730px;
       width: 20px;
     }
     button {
       display: block;
-      margin: 20px auto;
-      padding: 10px 20px;
+      margin: 5px auto;
+      padding: 10px 10px;
       font-size: 16px;
       cursor: pointer;
     }

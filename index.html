@@ -18,6 +18,7 @@
   </div>
 
   <button onclick="gerarImagem()">Gerar imagem do recibo</button>
+  <button onclick="limparCampos()">Limpar Campos</button>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
@@ -28,7 +29,12 @@
         link.download = "recibo.png";
         link.href = canvas.toDataURL();
         link.click();
-      });
+      })
+
+      function limparCampos() {
+      const campos = document.querySelectorAll('#recibo input');
+      campos.forEach(input => input.value = '');
+    }
     }
   </script>
 </body>
